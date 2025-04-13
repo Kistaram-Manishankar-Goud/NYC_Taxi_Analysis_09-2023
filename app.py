@@ -3,9 +3,12 @@ import pickle
 import numpy as np
 import pandas as pd
 
-# Load model and feature columns
-model = pickle.load(open('linear_regression_model.pkl', 'rb'))
-feature_columns = pickle.load(open('feature_columns.pkl', 'rb'))
+import joblib
+
+# Load model and features
+model = joblib.load('linear_regression_model.pkl')
+feature_columns = joblib.load('feature_columns.pkl')
+
 
 st.title("🚕 NYC Green Taxi Fare Predictor")
 st.markdown("Input your trip details to predict the total fare (including tips & surcharges).")
